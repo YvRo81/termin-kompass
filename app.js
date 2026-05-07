@@ -9,7 +9,7 @@ const events = [
   },
   {
     title: "Sessionseröffnung",
-    date: "2026-11-14",
+    date: "2026-11-13",
     time: "Beginn 19:11 Uhr",
     place: "TuS Sportheim, Schießgasse 9, 52152 Simmerath-Lammersdorf",
     kind: "Intern",
