@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Termin-Kompass | Karnevalsfreunde Lammersdorf</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-panel" aria-labelledby="page-title">
+        <div>
+          <p class="kicker">Karnevalsfreunde Lammersdorf 1935 e.V.</p>
+          <h1 id="page-title">Termin-Kompass</h1>
+          <p class="intro">
+            Unsere Übersicht: Hier seht ihr schnell,
+            wann wir uns treffen, wo ihr hin müsst und was für den jeweiligen
+            Termin wichtig ist.
+          </p>
+        </div>
+        <div class="session-badge" aria-label="Session 2025/2026">
+          <span>Session</span>
+          <strong>2026/27</strong>
+        </div>
+      </section>
+
+      <section class="toolbar" aria-label="Termine filtern">
+        <label class="search-box">
+          <span>Suche</span>
+          <input id="searchInput" type="search" placeholder="z.B. Sitzung, Zug, Aufbau" />
+        </label>
+
+        <div class="filter-group" role="group" aria-label="Kategorie">
+          <button class="filter-button is-active" type="button" data-filter="Alle">Alle</button>
+          <button class="filter-button" type="button" data-filter="Auftritt">Auftritt</button>
+          <button class="filter-button" type="button" data-filter="Zelt">Zelt</button>
+          <button class="filter-button" type="button" data-filter="Zug">Zug</button>
+          <button class="filter-button" type="button" data-filter="Intern">Intern</button>
+        </div>
+      </section>
+
+      <section class="spotlight" aria-labelledby="spotlight-title">
+        <div>
+          <p class="eyebrow">Nächster Termin</p>
+          <h2 id="spotlight-title"></h2>
+          <p id="spotlightMeta"></p>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <aside class="month-nav" aria-label="Monate">
+          <button class="month-button is-active" type="button" data-month="Alle">Alle</button>
+          <button class="month-button" type="button" data-month="Oktober">Oktober</button>
+          <button class="month-button" type="button" data-month="November">November</button>
+          <button class="month-button" type="button" data-month="Januar">Januar</button>
+          <button class="month-button" type="button" data-month="Februar">Februar</button>
+        </aside>
+
+        <section>
+          <div class="list-heading">
+            <h2>Aktuelle Terminwand</h2>
+            <p id="resultCount"></p>
+          </div>
+          <div id="eventList" class="event-list" aria-live="polite"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
