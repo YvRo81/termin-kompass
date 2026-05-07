@@ -1,7 +1,7 @@
 const events = [
   {
     title: "Almrausch",
-    date: "2026-10-31",
+    date: "2026-11-07",
     time: "Beginn 20:00 Uhr",
     place: "",
     kind: "Zelt",
@@ -9,7 +9,7 @@ const events = [
   },
   {
     title: "Sessionseröffnung",
-    date: "2026-11-07",
+    date: "2026-11-14",
     time: "Beginn 19:11 Uhr",
     place: "TuS Sportheim, Schießgasse 9, 52152 Simmerath-Lammersdorf",
     kind: "Intern",
