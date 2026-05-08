@@ -226,18 +226,23 @@ h1 {
 }
 
 .notice {
-  padding: 16px 18px;
-  border: 1px solid rgba(23, 79, 154, 0.18);
-  border-left: 7px solid var(--red);
+  padding: 18px 20px;
+  border: 2px solid rgba(215, 25, 32, 0.26);
+  border-left: 9px solid var(--red);
   border-radius: 8px;
-  background: #ffffff;
+  background:
+    linear-gradient(90deg, rgba(215, 25, 32, 0.1), rgba(255, 244, 209, 0.78)),
+    #ffffff;
   color: var(--blue-dark);
   box-shadow: 0 10px 26px rgba(16, 34, 66, 0.08);
-  line-height: 1.5;
+  line-height: 1.55;
+  font-size: 1.05rem;
 }
 
 .notice strong {
   margin-right: 6px;
+  color: var(--red-dark);
+  font-weight: 950;
 }
 
 .content-grid {
@@ -341,6 +346,20 @@ h1 {
   margin: 0;
   color: var(--muted);
   line-height: 1.5;
+}
+
+.performance-badge {
+  display: inline-grid;
+  align-items: center;
+  min-height: 34px;
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 0 12px;
+  background: #fff4d1;
+  color: #7a5500;
+  font-size: 0.9rem;
+  font-weight: 950;
+  box-shadow: inset 0 0 0 1px rgba(214, 161, 60, 0.35);
 }
 
 .card-actions {

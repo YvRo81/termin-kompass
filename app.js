@@ -274,7 +274,21 @@ function renderEvents() {
     .map((event) => {
       const date = formatDate(event.date);
       const details = [event.time, event.place].filter(Boolean).join(" · ");
-      const noteText = event.note.replace(/\bBUS\.?\s*/i, "").trim();
+      let noteText = event.note.replace(/\bBUS\.?\s*/i, "").trim();
+      const performanceMatch = noteText.match(/Auftrittszeit:\s*[^.]+\.?|Auftrittszeit\s*[^.]+\.?/i);
+      const performanceLabel =
+        performanceMatch || /^Auftritt:\s*[^.]+$/i.test(event.time)
+          ? `<span class="performance-badge">${
+              performanceMatch
+                ? performanceMatch[0].replace(/\.$/, "")
+                : event.time.replace("Auftritt:", "Auftrittszeit:")
+            }</span>`
+          : "";
+
+      if (performanceMatch) {
+        noteText = noteText.replace(performanceMatch[0], "").trim();
+      }
+
       const note = noteText ? `<p>${noteText}</p>` : "";
 
       return `
@@ -288,6 +302,7 @@ function renderEvents() {
           <div>
             <h3>${event.title}</h3>
             <p>${details}</p>
+            ${performanceLabel}
             ${note}
           </div>
           <div class="card-actions">
