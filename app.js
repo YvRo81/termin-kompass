@@ -16,6 +16,14 @@ const events = [
     note: "",
   },
   {
+    title: "Sessionseröffnung Schmedter Grielächer",
+    date: "2026-11-14",
+    time: "Auftritt: 20 Minuten",
+    place: "Saal Schützenhof, Monschauer Str. 14, 52385 Nideggen-Schmidt",
+    kind: "Auftritt",
+    note: "BUS. Einladung folgt.",
+  },
+  {
     title: "Prinzenproklamation",
     date: "2026-11-21",
     time: "Beginn 19:00 Uhr",
@@ -32,12 +40,28 @@ const events = [
     note: "Treffen: 13:15 Uhr.",
   },
   {
+    title: "Seniorenstift Seliger Gerhard",
+    date: "2027-01-15",
+    time: "17:00 Uhr",
+    place: "Kammerbruchstr. 8, 52152 Simmerath",
+    kind: "Auftritt",
+    note: "Privatanreise.",
+  },
+  {
     title: "Duell der Jecken",
     date: "2027-01-16",
     time: "Beginn 16:00 Uhr",
     place: "",
     kind: "Zelt",
     note: "Einlass: 15:30 Uhr.",
+  },
+  {
+    title: "Frühschoppen Rott",
+    date: "2027-01-24",
+    time: "Uhrzeit in Klärung",
+    place: "Saal Hütten, Quirinusstr. 15, 52159 Roetgen-Rott",
+    kind: "Auftritt",
+    note: "BUS.",
   },
   {
     title: "Bessemsbengersause",
@@ -101,7 +125,7 @@ const events = [
     time: "Uhrzeit folgt",
     place: "Zweifaller Straße 34, 52159 Mulartshütte",
     kind: "Auftritt",
-    note: "Auftrittszeit 45 Min. BUS.",
+    note: "BUS. Auftrittszeit: 45 Minuten.",
   },
   {
     title: "Karnevalszug Rollesbroich",
@@ -117,7 +141,7 @@ const events = [
     time: "Einlass ab 10:30 Uhr",
     place: "DGH Kesternich, Vereinsweg 10, 52152 Simmerath",
     kind: "Auftritt",
-    note: "Einlass ab 10:30 Uhr. BUS.",
+    note: "BUS. Auftrittszeit: 20 Minuten.",
   },
   {
     title: "Familiensitzung",
@@ -133,11 +157,11 @@ const events = [
     time: "Beginn 11:11 Uhr",
     place: "",
     kind: "Zug",
-    note: "Aufstellen 13:30 Uhr. Frühschoppen Zelt. 14:30 Uhr Start Zug.",
+    note: "Aufstellen: 13:30 Uhr. Frühschoppen Zelt. 14:30 Uhr Start Zug.",
   },
   {
     title: "Tollitäten auskleiden",
-    date: "2027-02-17",
+    date: "2027-02-09",
     time: "Uhrzeit folgt",
     place: "TuS Sportheim, Schießgasse 9, 52152 Simmerath-Lammersdorf",
     kind: "Intern",
@@ -171,11 +195,17 @@ const spotlightMeta = document.querySelector("#spotlightMeta");
 let activeFilter = "Alle";
 let activeMonth = "Alle";
 
+function isBusEvent(event) {
+  return /\bbus\b/i.test(event.note);
+}
+
+function isOwnTravelEvent(event) {
+  return /privatanreise/i.test(event.note);
+}
+
 function shouldShowRoute(event) {
   const hasAddress = /\d{5}|straße|str\.|gasse|weg|römbchen|quadflieg/i.test(event.place);
-  const isOwnTravel = /privatanreise/i.test(event.note);
-
-  return hasAddress && isOwnTravel;
+  return hasAddress && isOwnTravelEvent(event);
 }
 
 function getRouteUrl(place) {
@@ -191,6 +221,22 @@ function formatDate(dateString) {
   };
 }
 
+function matchesActiveFilter(event) {
+  if (activeFilter === "Alle") {
+    return true;
+  }
+
+  if (activeFilter === "Bus") {
+    return isBusEvent(event);
+  }
+
+  if (activeFilter === "Privatanreise") {
+    return isOwnTravelEvent(event);
+  }
+
+  return event.kind === activeFilter;
+}
+
 function getFilteredEvents() {
   const searchTerm = searchInput.value.trim().toLowerCase();
 
@@ -198,10 +244,9 @@ function getFilteredEvents() {
     const date = formatDate(event.date);
     const text = `${event.title} ${event.place} ${event.kind} ${event.note}`.toLowerCase();
     const matchesSearch = !searchTerm || text.includes(searchTerm);
-    const matchesFilter = activeFilter === "Alle" || event.kind === activeFilter;
     const matchesMonth = activeMonth === "Alle" || date.month === activeMonth;
 
-    return matchesSearch && matchesFilter && matchesMonth;
+    return matchesSearch && matchesActiveFilter(event) && matchesMonth;
   });
 }
 
@@ -210,7 +255,9 @@ function renderSpotlight() {
   const date = formatDate(nextEvent.date);
 
   spotlightTitle.textContent = nextEvent.title;
-  spotlightMeta.textContent = `${date.compact} · ${nextEvent.time} · ${nextEvent.place}`;
+  spotlightMeta.textContent = [date.compact, nextEvent.time, nextEvent.place]
+    .filter(Boolean)
+    .join(" · ");
 }
 
 function renderEvents() {
@@ -226,6 +273,9 @@ function renderEvents() {
   eventList.innerHTML = filteredEvents
     .map((event) => {
       const date = formatDate(event.date);
+      const details = [event.time, event.place].filter(Boolean).join(" · ");
+      const noteText = event.note.replace(/\bBUS\.?\s*/i, "").trim();
+      const note = noteText ? `<p>${noteText}</p>` : "";
 
       return `
         <article class="event-card" data-kind="${event.kind}">
@@ -237,11 +287,13 @@ function renderEvents() {
           </div>
           <div>
             <h3>${event.title}</h3>
-            <p>${event.time} · ${event.place}</p>
-            <p>${event.note}</p>
+            <p>${details}</p>
+            ${note}
           </div>
           <div class="card-actions">
+            ${isBusEvent(event) ? '<span class="bus-badge">BUS!</span>' : ""}
             <span class="tag">${event.kind}</span>
+            ${isOwnTravelEvent(event) ? '<span class="travel-tag">Privatanreise</span>' : ""}
             ${
               shouldShowRoute(event)
                 ? `<a class="route-link" href="${getRouteUrl(event.place)}" target="_blank" rel="noreferrer">Route öffnen</a>`
