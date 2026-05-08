@@ -273,17 +273,19 @@ function renderEvents() {
   eventList.innerHTML = filteredEvents
     .map((event) => {
       const date = formatDate(event.date);
-      const details = [event.time, event.place].filter(Boolean).join(" · ");
       let noteText = event.note.replace(/\bBUS\.?\s*/i, "").trim();
       const performanceMatch = noteText.match(/Auftrittszeit:\s*[^.]+\.?|Auftrittszeit\s*[^.]+\.?/i);
+      const performanceFromTime = /^Auftritt:\s*[^.]+$/i.test(event.time);
       const performanceLabel =
-        performanceMatch || /^Auftritt:\s*[^.]+$/i.test(event.time)
+        performanceMatch || performanceFromTime
           ? `<span class="performance-badge">${
               performanceMatch
                 ? performanceMatch[0].replace(/\.$/, "")
                 : event.time.replace("Auftritt:", "Auftrittszeit:")
             }</span>`
           : "";
+      const details = [performanceFromTime ? "" : event.time, event.place].filter(Boolean).join(" · ");
+      const showKindTag = !(event.kind === "Auftritt" && performanceLabel);
 
       if (performanceMatch) {
         noteText = noteText.replace(performanceMatch[0], "").trim();
@@ -307,7 +309,7 @@ function renderEvents() {
           </div>
           <div class="card-actions">
             ${isBusEvent(event) ? '<span class="bus-badge">BUS!</span>' : ""}
-            <span class="tag">${event.kind}</span>
+            ${showKindTag ? `<span class="tag">${event.kind}</span>` : ""}
             ${isOwnTravelEvent(event) ? '<span class="travel-tag">Privatanreise</span>' : ""}
             ${
               shouldShowRoute(event)
