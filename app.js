@@ -45,7 +45,15 @@ const events = [
     time: "17:00 Uhr",
     place: "Kammerbruchstr. 8, 52152 Simmerath",
     kind: "Auftritt",
-    note: "Privatanreise.",
+    note: "Treffen: 16:40 Uhr vor Ort. Privatanreise.",
+  },
+  {
+    title: "Freundschaftstreffen KG Mönsterböscher Jonge",
+    date: "2027-01-15",
+    time: "Auftritt: 21:35 Uhr",
+    place: "Jugendheim Münsterbusch, Rotdornweg 2a, 52223 Stolberg",
+    kind: "Auftritt",
+    note: "BUS. Abfahrt: 20:00 Uhr. Auftrittszeit: 20 Minuten.",
   },
   {
     title: "Duell der Jecken",
@@ -61,7 +69,7 @@ const events = [
     time: "Uhrzeit in Klärung",
     place: "Saal Hütten, Quirinusstr. 15, 52159 Roetgen-Rott",
     kind: "Auftritt",
-    note: "BUS.",
+    note: "BUS. Auftrittszeit: 25 Minuten.",
   },
   {
     title: "Bessemsbengersause",
