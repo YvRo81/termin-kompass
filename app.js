@@ -282,6 +282,7 @@ function renderEvents() {
     .map((event) => {
       const date = formatDate(event.date);
       let noteText = event.note.replace(/\bBUS\.?\s*/i, "").trim();
+      noteText = noteText.replace(/\bPrivatanreise\.?\s*/i, "").trim();
       const performanceMatch = noteText.match(/Auftrittszeit:\s*[^.]+\.?|Auftrittszeit\s*[^.]+\.?/i);
       const performanceFromTime = /^Auftritt:\s*[^.]+$/i.test(event.time);
       const performanceLabel =
