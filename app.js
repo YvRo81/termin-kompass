@@ -5,7 +5,7 @@ const events = [
     time: "Beginn 20:00 Uhr",
     place: "",
     kind: "Zelt",
-    note: "",
+    note: "Treffen: 19:30 Uhr.",
   },
   {
     title: "Sessionseröffnung",
@@ -32,6 +32,14 @@ const events = [
     note: "Treffen: 18:15 Uhr.",
   },
   {
+    title: "Gastauftritt PriPro KG Lichtenbusch",
+    date: "2027-01-09",
+    time: "19:40 Uhr",
+    place: "Saal Kessel, 4731 Raeren, Belgien",
+    kind: "Auftritt",
+    note: "BUS. Abfahrt: 18:45 Uhr. Auftrittszeit: 25 Minuten.",
+  },
+  {
     title: "Kinder Pri-Pro",
     date: "2027-01-10",
     time: "Beginn 14:00 Uhr",
@@ -50,7 +58,7 @@ const events = [
   {
     title: "Freundschaftstreffen KG Mönsterböscher Jonge",
     date: "2027-01-15",
-    time: "Auftritt: 21:35 Uhr",
+    time: "21:35 Uhr",
     place: "Jugendheim Münsterbusch, Rotdornweg 2a, 52223 Stolberg",
     kind: "Auftritt",
     note: "BUS. Abfahrt: 20:00 Uhr. Auftrittszeit: 20 Minuten.",
@@ -66,10 +74,10 @@ const events = [
   {
     title: "Frühschoppen Rott",
     date: "2027-01-24",
-    time: "Uhrzeit in Klärung",
+    time: "13:45 Uhr",
     place: "Saal Hütten, Quirinusstr. 15, 52159 Roetgen-Rott",
     kind: "Auftritt",
-    note: "BUS. Auftrittszeit: 25 Minuten.",
+    note: "BUS. Abfahrt: 12:45 Uhr. Auftrittszeit: 25 Minuten.",
   },
   {
     title: "Bessemsbengersause",
