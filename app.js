@@ -1,4 +1,4 @@
-const events = [
+﻿const events = [
   {
     title: "Almrausch",
     date: "2026-11-07",
@@ -16,12 +16,12 @@ const events = [
     note: "",
   },
   {
-    title: "Sessionseröffnung Schmedter Grielächer",
+    title: "Sessionseröffnung Schmedter Grieläächer",
     date: "2026-11-14",
-    time: "Auftritt: 20 Minuten",
+    time: "Uhrzeit folgt",
     place: "Saal Schützenhof, Monschauer Str. 14, 52385 Nideggen-Schmidt",
     kind: "Auftritt",
-    note: "BUS. Einladung folgt.",
+    note: "BUS. Einladung folgt. Auftrittszeit: 20 Minuten.",
   },
   {
     title: "Prinzenproklamation",
@@ -70,6 +70,14 @@ const events = [
     place: "",
     kind: "Zelt",
     note: "Einlass: 15:30 Uhr.",
+  },
+  {
+    title: "Freundschafts- und Tollitätentreffen",
+    date: "2027-01-22",
+    time: "Uhrzeit unklar",
+    place: "Bürgerhaus Vennwegen, Mulartshütter Str. 13, 52224 Stolberg",
+    kind: "Auftritt",
+    note: "BUS. Auftrittszeit: 20 Minuten.",
   },
   {
     title: "Frühschoppen Rott",
