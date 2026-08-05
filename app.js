@@ -16,9 +16,17 @@
     note: "",
   },
   {
+    title: "Freundschafts- und Tollitätentreffen KV de Vennkatze",
+    date: "2026-11-14",
+    time: "21:00 Uhr",
+    place: "Bürgerhaus Vennwegen, Mulartshütter Str. 13, 52224 Stolberg",
+    kind: "Auftritt",
+    note: "BUS. Abfahrt: 20:00 Uhr. Auftrittszeit: 20 Minuten.",
+  },
+  {
     title: "Sessionseröffnung Schmedter Grieläächer",
     date: "2026-11-14",
-    time: "Uhrzeit folgt",
+    time: "ca. 22:30 Uhr",
     place: "Saal Schützenhof, Monschauer Str. 14, 52385 Nideggen-Schmidt",
     kind: "Auftritt",
     note: "BUS. Einladung folgt. Auftrittszeit: 20 Minuten.",
@@ -72,12 +80,12 @@
     note: "Einlass: 15:30 Uhr.",
   },
   {
-    title: "Freundschafts- und Tollitätentreffen",
+    title: "Freundschafts- und Tollitätentreffen KV de Vennkatze",
     date: "2027-01-22",
-    time: "Uhrzeit unklar",
+    time: "20:00 Uhr",
     place: "Bürgerhaus Vennwegen, Mulartshütter Str. 13, 52224 Stolberg",
     kind: "Auftritt",
-    note: "BUS. Auftrittszeit: 20 Minuten.",
+    note: "BUS. Abfahrt: 19:00 Uhr. Auftrittszeit: 20 Minuten.",
   },
   {
     title: "Frühschoppen Rott",
@@ -373,3 +381,4 @@ searchInput.addEventListener("input", renderEvents);
 
 renderSpotlight();
 renderEvents();
+
