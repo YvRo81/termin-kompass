@@ -26,10 +26,10 @@
   {
     title: "Sessionseröffnung Schmedter Grieläächer",
     date: "2026-11-14",
-    time: "ca. 22:30 Uhr",
+    time: "22:55 Uhr",
     place: "Saal Schützenhof, Monschauer Str. 14, 52385 Nideggen-Schmidt",
     kind: "Auftritt",
-    note: "BUS. Einladung folgt. Auftrittszeit: 20 Minuten.",
+    note: "BUS. Auftrittszeit: 20 Minuten.",
   },
   {
     title: "Prinzenproklamation",
@@ -80,6 +80,14 @@
     note: "Einlass: 15:30 Uhr.",
   },
   {
+    title: "Schlüsselübergabe Rollesbroich",
+    date: "2027-01-17",
+    time: "17:55 Uhr",
+    place: "Saal Nationalpark Rollesbroich, Dürener Str. 39, 52152 Simmerath",
+    kind: "Auftritt",
+    note: "BUS. Abfahrt: in Klärung.",
+  },
+  {
     title: "Freundschafts- und Tollitätentreffen KV de Vennkatze",
     date: "2027-01-22",
     time: "20:00 Uhr",
@@ -102,6 +110,14 @@
     place: "",
     kind: "Zelt",
     note: "Treffen: 18:30 Uhr.",
+  },
+  {
+    title: "Biwak KG Kiescheflitscher Rurberg",
+    date: "2027-01-31",
+    time: "Uhrzeit in Klärung",
+    place: "Antoniushof, Seeufer 5, 52152 Simmerath",
+    kind: "Auftritt",
+    note: "BUS. Auftrittszeit: 25 Minuten.",
   },
   {
     title: "Besuch Helena Stollenwerk Haus",
@@ -236,8 +252,7 @@ function isOwnTravelEvent(event) {
 }
 
 function shouldShowRoute(event) {
-  const hasAddress = /\d{5}|straße|str\.|gasse|weg|römbchen|quadflieg/i.test(event.place);
-  return hasAddress && isOwnTravelEvent(event);
+  return Boolean(event.place.trim()) && isOwnTravelEvent(event);
 }
 
 function getRouteUrl(place) {
