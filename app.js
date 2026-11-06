@@ -96,6 +96,14 @@
     note: "BUS. Abfahrt: 19:00 Uhr. Auftrittszeit: 20 Minuten.",
   },
   {
+    title: "Freundschaftstreffen KV de Eschekülle",
+    date: "2027-01-22",
+    time: "22:45 Uhr",
+    place: "Veranstaltungsort noch unklar",
+    kind: "Auftritt",
+    note: "BUS. Abfahrt: 21:30 Uhr.",
+  },
+  {
     title: "Frühschoppen Rott",
     date: "2027-01-24",
     time: "13:45 Uhr",
@@ -106,18 +114,18 @@
   {
     title: "Bessemsbengersause",
     date: "2027-01-30",
-    time: "Beginn 18:55 Uhr",
+    time: "Beginn 18:30 Uhr",
     place: "",
     kind: "Zelt",
-    note: "Treffen: 18:30 Uhr.",
+    note: "Treffen: 18:00 Uhr.",
   },
   {
     title: "Biwak KG Kiescheflitscher Rurberg",
     date: "2027-01-31",
-    time: "Uhrzeit in Klärung",
+    time: "15:00 Uhr",
     place: "Antoniushof, Seeufer 5, 52152 Simmerath",
     kind: "Auftritt",
-    note: "BUS. Auftrittszeit: 25 Minuten.",
+    note: "BUS. Abfahrt: 13:45 Uhr. Auftrittszeit: 25 Minuten.",
   },
   {
     title: "Besuch Helena Stollenwerk Haus",
@@ -125,7 +133,7 @@
     time: "18:00 Uhr",
     place: "Quadfliegstr. 14, 52152 Simmerath",
     kind: "Auftritt",
-    note: "Privatanreise.",
+    note: "Privatanreise. Einladung folgt!",
   },
   {
     title: "Besuch Behindertenwerkstatt",
@@ -133,7 +141,7 @@
     time: "08:15 Uhr",
     place: "CBW-GmbH Werk 5, Am Handwerkerzentrum 13, 52156 Monschau",
     kind: "Auftritt",
-    note: "Privatanreise.",
+    note: "Privatanreise. Einladung folgt!",
   },
   {
     title: "Grundschule",
@@ -141,7 +149,7 @@
     time: "09:15 Uhr",
     place: "",
     kind: "Auftritt",
-    note: "Auftrittszeit 30 Min.",
+    note: "Auftrittszeit: 30 Minuten. Einladung folgt!",
   },
   {
     title: "Kindergarten Profinos",
@@ -149,7 +157,7 @@
     time: "10:15 Uhr",
     place: "",
     kind: "Auftritt",
-    note: "",
+    note: "Einladung folgt!",
   },
   {
     title: "Schlüsselübergabe Simmerath",
@@ -157,7 +165,7 @@
     time: "11:11 Uhr",
     place: "Dreifachhalle, Im Römbchen, 52152 Simmerath",
     kind: "Auftritt",
-    note: "Privatanreise.",
+    note: "Privatanreise. Einladung folgt!",
   },
   {
     title: "Altweiber",
@@ -173,7 +181,7 @@
     time: "Uhrzeit folgt",
     place: "Zweifaller Straße 34, 52159 Mulartshütte",
     kind: "Auftritt",
-    note: "BUS. Auftrittszeit: 45 Minuten.",
+    note: "BUS. Auftrittszeit: 45 Minuten. Einladung folgt!",
   },
   {
     title: "Karnevalszug Rollesbroich",
@@ -186,10 +194,10 @@
   {
     title: "Frühschoppen Kester Lehmschwalben",
     date: "2027-02-07",
-    time: "Einlass ab 10:30 Uhr",
+    time: "10:30 Uhr",
     place: "DGH Kesternich, Vereinsweg 10, 52152 Simmerath",
     kind: "Auftritt",
-    note: "BUS. Auftrittszeit: 20 Minuten.",
+    note: "BUS. Abfahrt: 10:15 Uhr. Auftrittszeit: 20 Minuten.",
   },
   {
     title: "Familiensitzung",
@@ -202,10 +210,10 @@
   {
     title: "Rosenmontagszug",
     date: "2027-02-08",
-    time: "Beginn 11:11 Uhr",
+    time: "Start Zug: 14:30 Uhr",
     place: "",
     kind: "Zug",
-    note: "Aufstellen: 13:30 Uhr. Frühschoppen Zelt. 14:30 Uhr Start Zug.",
+    note: "Frühschoppen im Zelt: 11:11 Uhr. Aufstellen: 13:30 Uhr.",
   },
   {
     title: "Tollitäten auskleiden",
