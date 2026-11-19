@@ -85,7 +85,7 @@
     time: "17:55 Uhr",
     place: "Saal Nationalpark Rollesbroich, Dürener Str. 39, 52152 Simmerath",
     kind: "Auftritt",
-    note: "BUS. Abfahrt: in Klärung.",
+    note: "BUS. Abfahrt: 15:00 Uhr.",
   },
   {
     title: "Freundschafts- und Tollitätentreffen KV de Vennkatze",
@@ -96,12 +96,20 @@
     note: "BUS. Abfahrt: 19:00 Uhr. Auftrittszeit: 20 Minuten.",
   },
   {
-    title: "Freundschaftstreffen KV de Eschekülle",
+    title: "Biwak Mausbacher Wolleklös",
     date: "2027-01-22",
     time: "22:45 Uhr",
+    place: "Festzelt Mausbach, Rektor-Soldierer-Weg, 52224 Stolberg-Mausbach",
+    kind: "Auftritt",
+    note: "BUS. Auftrittszeit: 25 Minuten.",
+  },
+  {
+    title: "Freundschaftstreffen KV de Eschekülle",
+    date: "2027-01-23",
+    time: "Uhrzeit noch unklar",
     place: "Veranstaltungsort noch unklar",
     kind: "Auftritt",
-    note: "BUS. Abfahrt: 21:30 Uhr.",
+    note: "BUS.",
   },
   {
     title: "Frühschoppen Rott",
@@ -177,11 +185,11 @@
   },
   {
     title: "Besuch Bürgerverein Mulartshütte",
-    date: "2027-02-04",
+    date: "2027-02-05",
     time: "Uhrzeit folgt",
     place: "Zweifaller Straße 34, 52159 Mulartshütte",
     kind: "Auftritt",
-    note: "BUS. Auftrittszeit: 45 Minuten. Einladung folgt!",
+    note: "BUS. Auftrittszeit: 45 Minuten.",
   },
   {
     title: "Karnevalszug Rollesbroich",
@@ -214,6 +222,14 @@
     place: "",
     kind: "Zug",
     note: "Frühschoppen im Zelt: 11:11 Uhr. Aufstellen: 13:30 Uhr.",
+  },
+  {
+    title: "Veilchendienstagszug Rurberg",
+    date: "2027-02-09",
+    time: "Uhrzeit noch unklar",
+    place: "Treffen alte Sparkasse",
+    kind: "Zug",
+    note: "BUS.",
   },
   {
     title: "Tollitäten auskleiden",
