@@ -308,8 +308,9 @@ function matchesActiveFilter(event) {
   return event.kind === activeFilter;
 }
 
-function getFilteredEvents() {
+function getFilteredEvents(now = new Date()) {
   const searchTerm = searchInput.value.trim().toLowerCase();
+  const today = getToday(now);
 
   return events.filter((event) => {
     const date = formatDate(event.date);
@@ -317,11 +318,11 @@ function getFilteredEvents() {
     const matchesSearch = !searchTerm || text.includes(searchTerm);
     const matchesMonth = activeMonth === "Alle" || date.month === activeMonth;
 
-    return matchesSearch && matchesActiveFilter(event) && matchesMonth;
+    return event.date >= today && matchesSearch && matchesActiveFilter(event) && matchesMonth;
   });
 }
 
-function renderSpotlight(now = new Date()) {
+function getToday(now = new Date()) {
   const parts = new Intl.DateTimeFormat("en", {
     timeZone: "Europe/Berlin",
     year: "numeric",
@@ -329,7 +330,11 @@ function renderSpotlight(now = new Date()) {
     day: "2-digit",
   }).formatToParts(now);
   const part = (type) => parts.find((item) => item.type === type).value;
-  const today = `${part("year")}-${part("month")}-${part("day")}`;
+  return `${part("year")}-${part("month")}-${part("day")}`;
+}
+
+function renderSpotlight(now = new Date()) {
+  const today = getToday(now);
   const nextEvent = events
     .filter((event) => event.date >= today)
     .sort((a, b) => a.date.localeCompare(b.date))[0];
