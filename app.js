@@ -321,8 +321,25 @@ function getFilteredEvents() {
   });
 }
 
-function renderSpotlight() {
-  const nextEvent = events[0];
+function renderSpotlight(now = new Date()) {
+  const parts = new Intl.DateTimeFormat("en", {
+    timeZone: "Europe/Berlin",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(now);
+  const part = (type) => parts.find((item) => item.type === type).value;
+  const today = `${part("year")}-${part("month")}-${part("day")}`;
+  const nextEvent = events
+    .filter((event) => event.date >= today)
+    .sort((a, b) => a.date.localeCompare(b.date))[0];
+
+  if (!nextEvent) {
+    spotlightTitle.textContent = "Keine weiteren Termine geplant";
+    spotlightMeta.textContent = "";
+    return;
+  }
+
   const date = formatDate(nextEvent.date);
 
   spotlightTitle.textContent = nextEvent.title;
