@@ -48,6 +48,14 @@
     note: "BUS. Abfahrt: 18:45 Uhr. Auftrittszeit: 25 Minuten.",
   },
   {
+    title: "PriPro Kesternich",
+    date: "2027-01-09",
+    time: "Im Anschluss an Lichtenbusch",
+    place: "DGH Kesternich, Vereinsweg 10, 52152 Simmerath",
+    kind: "Auftritt",
+    note: "BUS. Achtung: Abfrage bezüglich Eintrittskarten beachten.",
+  },
+  {
     title: "Kinder Pri-Pro",
     date: "2027-01-10",
     time: "Beginn 14:00 Uhr",
@@ -118,6 +126,14 @@
     place: "Saal Hütten, Quirinusstr. 15, 52159 Roetgen-Rott",
     kind: "Auftritt",
     note: "BUS. Abfahrt: 12:45 Uhr. Auftrittszeit: 25 Minuten.",
+  },
+  {
+    title: "Sparkassenempfang",
+    date: "2027-01-29",
+    time: "Uhrzeit folgt",
+    place: "Festzelt Roetgen",
+    kind: "Intern",
+    note: "Privatanreise. Details folgen.",
   },
   {
     title: "Bessemsbengersause",
@@ -194,10 +210,10 @@
   {
     title: "Karnevalszug Rollesbroich",
     date: "2027-02-06",
-    time: "Uhrzeit folgt",
+    time: "Beginn 14:11 Uhr",
     place: "Treffen Bushaltestelle Grundschule",
     kind: "Zug",
-    note: "BUS.",
+    note: "BUS. Abfahrt: 12:45 Uhr.",
   },
   {
     title: "Frühschoppen Kester Lehmschwalben",
